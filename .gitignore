@@ -1,0 +1,7 @@
+*.ipynb
+data/*
+kaggle/*
+models/*
+
+!contrastive_anchors_positives.json
+!BPEtokenizer_books_an_pos_25000/
