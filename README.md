@@ -75,3 +75,31 @@ Top 10 Evaluation Questions (Samples)
 9. What merger value was cited in the Microsoft–Activision deal?
 10. What data breach size (number of users) was reported in the Facebook leak?
 ```
+
+
+## Experiments Performed:
+
+1. Bert-style lstm training with 190 publicly available books (200k texts)
+    - 30000 vocab (word-based)
+    - 15% masking
+        - 80% replaced with [MASK]
+        - 10% replaced with random tokens
+        - 10% original token
+    - task: predict the original token
+    - Result:
+        - === Epoch 1 finished | loss=4.6106 ppl=100.55 masked_acc=0.2911 ===
+        - === Epoch 2 finished | loss=3.7401 ppl=42.10 masked_acc=0.3790 ===
+        - === Epoch 3 finished | loss=3.4656 ppl=32.00 masked_acc=0.4072 ===
+
+2. Bert-style lstm training with learned cbow embedding transfering
+    - cbow:
+        - Epoch 1 — loss: 5878969.00
+        - Epoch 100 — loss: 225296.00
+    - Result:
+        - === Epoch 1 finished | loss=4.1486 ppl=63.35 masked_acc=0.3411 ===
+        - === Epoch 2 finished | loss=3.4115 ppl=30.31 masked_acc=0.4117 ===
+        - === Epoch 3 finished | loss=3.1945 ppl=24.40 masked_acc=0.4341 ===
+
+Conclusion:
+- Bert based mlm helps but constrained by training data and scaled compute
+- Transfer learning of word based embedding helps to converge the MLM and semantic embedding faster but cannot beat the constraints.
