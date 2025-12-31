@@ -1,5 +1,15 @@
+import re
+import torch
 import numpy as np
 from gensim.models import Word2Vec
+
+# 1. Load checkpoint
+CKPT_PATH = "models/mlm_bilstm/bilstm_mlm_epoch3.pt"
+ckpt = torch.load(CKPT_PATH, map_location="cpu")
+vocab_itos = ckpt["vocab"]
+stoi = {t: i for i, t in enumerate(vocab_itos)}
+
+TOKEN_RE = re.compile(r"\w+|[^\s\w]", re.UNICODE)
 
 # Use the same tokenizer and vocab as your training script
 def text_vector(tokens, model):
@@ -17,6 +27,9 @@ def text_vector(tokens, model):
     vecs = np.vstack(vecs)
     weights = np.array(weights)
     return np.sum(vecs * weights[:, None], axis=0) / weights.sum()
+
+def tokenize(text):
+    return TOKEN_RE.findall(text.lower())
 
 def cosine(a, b):
     return np.dot(a, b) / (np.linalg.norm(a) * np.linalg.norm(b))

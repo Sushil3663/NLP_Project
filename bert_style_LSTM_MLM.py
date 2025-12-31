@@ -316,7 +316,7 @@ def train(json_path, model_save_path, epochs=3, batch_size=32, max_length=256, e
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
-    parser.add_argument('--data', type=str, default='/kaggle/input/bookdata/contrastive_anchors_positives.json')
+    parser.add_argument('--data', type=str, default='data/contrastive_anchors_positives.json')
     parser.add_argument('--out', type=str, default='checkpoints')
     parser.add_argument('--epochs', type=int, default=3)
     parser.add_argument('--batch-size', type=int, default=32)
@@ -327,8 +327,8 @@ if __name__ == '__main__':
     parser.add_argument('--bidirectional', action='store_true', default=True)
     parser.add_argument('--vocab-size', type=int, default=30000)
     parser.add_argument('--lr', type=float, default=5e-4)
-    parser.add_argument('--pretrained_embedding_path', type=str, default="/kaggle/input/base-bilstm-transfer-embed/word2vec_cbow_mlmvocab.model")  # << add this line
-    parser.add_argument('--lstm_vocab_ckpt_path', type=str, default="/kaggle/input/base-bilstm-transfer-embed/bilstm_mlm_epoch3.pt")  # << add this
+    parser.add_argument('--pretrained_embedding_path', type=str, default="models/word2vec_cbow_mlmvocab.model")  # << add this line
+    parser.add_argument('--lstm_vocab_ckpt_path', type=str, default="models/mlm_bilstm/bilstm_mlm_epoch3.pt")  # << add this
     args = parser.parse_args()
     out_dir = Path(args.out)
     out_dir.mkdir(parents=True, exist_ok=True)

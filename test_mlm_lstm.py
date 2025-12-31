@@ -7,7 +7,7 @@ from bert_style_LSTM_MLM import FlexibleLSTMBase
 # =========================
 # 1. Load checkpoint
 # =========================
-CKPT_PATH = "models/mlm_bilstm/bilstm_mlm_epoch3.pt"
+CKPT_PATH = "models/mlm_bilstm_embed_100/bilstm_mlm_epoch3.pt"
 
 ckpt = torch.load(CKPT_PATH, map_location="cpu")
 
@@ -142,5 +142,5 @@ text = "The declaration of independence was signed in 1776"
 predict_random_masks(
     text,
     mask_prob=0.3,
-    top_k=5
+    top_k=7
 )

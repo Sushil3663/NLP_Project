@@ -95,6 +95,14 @@ Top 10 Evaluation Questions (Samples)
     - cbow:
         - Epoch 1 — loss: 5878969.00
         - Epoch 100 — loss: 225296.00
+        - Tests: (word to word semantic score)
+            - government ↔ nation = 0.3342
+            - government ↔ book = -0.0273
+            - government ↔ happiness = 0.0619
+            - government ↔ machine = 0.1855
+            - government ↔ citizen = 0.1097
+            - government ↔ judiciary = 0.2022
+            - government ↔ democracy = 0.2379
     - Result:
         - === Epoch 1 finished | loss=4.1486 ppl=63.35 masked_acc=0.3411 ===
         - === Epoch 2 finished | loss=3.4115 ppl=30.31 masked_acc=0.4117 ===

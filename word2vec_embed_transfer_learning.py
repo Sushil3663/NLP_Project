@@ -1,4 +1,4 @@
-# Takes the mlm_lstm's vocab to train a cbow model
+# Takes the mlm_lstm's vocab (stored in epoch3.pt) to train a cbow model
 # the embedding trained is transfered to the mlm_lstm (2nd experiment)
 
 import torch
@@ -74,7 +74,6 @@ def train_cbow_from_bilstm_vocab(
         sg=0,   # CBOW
         compute_loss=True,
         negative=10, # changed
-        window=7 # changed
     )
     model.build_vocab(sentences)
     model.train(
@@ -97,7 +96,7 @@ if __name__ == "__main__":
     parser.add_argument("--save_path", type=str, default="models/word2vec_skip_mlmvocab.model", help="Where to save trained Word2Vec CBOW model")
     parser.add_argument("--epochs", type=int, default=200)
     parser.add_argument("--workers", type=int, default=15)
-    parser.add_argument("--window", type=int, default=5)
+    parser.add_argument("--window", type=int, default=7)
     parser.add_argument("--min_count", type=int, default=1)
     parser.add_argument("--emb_dim", type=int, default=None)
     args = parser.parse_args()
