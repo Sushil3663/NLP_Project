@@ -90,6 +90,11 @@ Top 10 Evaluation Questions (Samples)
         - === Epoch 1 finished | loss=4.6106 ppl=100.55 masked_acc=0.2911 ===
         - === Epoch 2 finished | loss=3.7401 ppl=42.10 masked_acc=0.3790 ===
         - === Epoch 3 finished | loss=3.4656 ppl=32.00 masked_acc=0.4072 ===
+    - Files used:
+        - data/contrastive_anchors_positives.json: 190 books data preped
+        - bert_style_LSTM_MLM.py: trains bert based bi-LSTM
+        - test_mlm_lstm.py: tests MASK unmasking for trained model
+        - models/mlm_bilstm/*pt: contains trained model, voacb and model config
 
 2. Bert-style lstm training with learned cbow embedding transfering
     - cbow:
@@ -107,7 +112,15 @@ Top 10 Evaluation Questions (Samples)
         - === Epoch 1 finished | loss=4.1486 ppl=63.35 masked_acc=0.3411 ===
         - === Epoch 2 finished | loss=3.4115 ppl=30.31 masked_acc=0.4117 ===
         - === Epoch 3 finished | loss=3.1945 ppl=24.40 masked_acc=0.4341 ===
-
+    - Files:
+        - data/contrastive_anchors_positives.json: 190 books data preped
+        - word2vec_embed_transfer_learning.py: cbow training file (requires model.pt to pass voacb)
+        - test_word2vec.py: tests word embedding for query with list of words
+        - models/word2vec_cbow_mlmvocab.model: cbow model used for embedding transfer learning to bi-LSTM
+        - pretrained_embed_matrix.py: code for creating embedding matrix using cbow trained model
+        - bert_style_LSTM_MLM.py: trains MLM using cbow's trained embedding
+        - models/mlm_bilstm_embed_100: MLM trained model using cbow's embedding state dict
+        - test_mlm_lstm.py: tests MASK unmasking for trained model
 ___
 
 Conclusion:
@@ -125,7 +138,7 @@ ___
     - Epoch 2:
         - train_loss=3.2217 | val_loss=3.2917
         - train_metrics: {'top1': 0.2453, 'mrr': 0.4036, 'r@5': 0.6054, 'r@10': 0.7410}
-  val_metrics:   {'top1': 0.2526, 'mrr': 0.4078, 'r@5': 0.6045, 'r@10': 0.7293}
+        - val_metrics: {'top1': 0.2526, 'mrr': 0.4078, 'r@5': 0.6045, 'r@10': 0.7293}
 
     - Epoch 3:
         - train_loss=2.9815 | val_loss=3.1643
@@ -141,7 +154,12 @@ ___
             - 0.6168 | The unanimous Declaration of the thirteen united States of America
             - 0.2139 | This recipe uses eggs and flour
             - 0.0718 | Project Gutenberg released its first ebook in 1971
-
+    - Files:
+        - models/mlm_bilstm_embed_100: MLM trained model using cbow's embedding state dict
+        - contrastive_embedding.py: training code for ms_marco dataset (embedding model training)
+        - models/ms_marco_emb/train.log: training log for 10 epochs
+        - models/ms_marco_emb/bilstm_best.pt: best training model embedding
+        - test_semantic_capacity.py: tests query sentence with list of sentences for semantic similarity
 ___
 
 Conclusion: Training on hard-negative mined dataset is essential rather then just random negatives (tried random negatives with 190 books first)
