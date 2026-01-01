@@ -80,6 +80,12 @@ Top 10 Evaluation Questions (Samples)
 ## Experiments Performed:
 
 1. Bert-style lstm training with 190 publicly available books (200k texts)
+    - Tokens:
+        - Total tokens: 88 Million tokens
+        - In-vocab tokens: 85.5 Million tokens (tokens used for training)
+        - OOV tokens: 2.4 Million tokens
+        - Unique in-vocab: 30k tokens
+        - Unique OOV: 236k tokens
     - 30000 vocab (word-based)
     - 15% masking
         - 80% replaced with [MASK]
