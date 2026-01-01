@@ -108,10 +108,13 @@ Top 10 Evaluation Questions (Samples)
         - === Epoch 2 finished | loss=3.4115 ppl=30.31 masked_acc=0.4117 ===
         - === Epoch 3 finished | loss=3.1945 ppl=24.40 masked_acc=0.4341 ===
 
+___
+
 Conclusion:
 - Bert based mlm helps but constrained by training data and scaled compute
 - Transfer learning of word based embedding helps to converge the MLM and semantic embedding faster but cannot beat the constraints.
 
+___
 3. Contrastive training on Hard Negative samples (ms_marco dataset):
     - using pre-trained bert based lstm model
     - Epoch 1:
@@ -138,3 +141,10 @@ Conclusion:
             - 0.6168 | The unanimous Declaration of the thirteen united States of America
             - 0.2139 | This recipe uses eggs and flour
             - 0.0718 | Project Gutenberg released its first ebook in 1971
+
+___
+
+Conclusion: Training on hard-negative mined dataset is essential rather then just random negatives (tried random negatives with 190 books first)
+
+___
+
