@@ -111,3 +111,30 @@ Top 10 Evaluation Questions (Samples)
 Conclusion:
 - Bert based mlm helps but constrained by training data and scaled compute
 - Transfer learning of word based embedding helps to converge the MLM and semantic embedding faster but cannot beat the constraints.
+
+3. Contrastive training on Hard Negative samples (ms_marco dataset):
+    - using pre-trained bert based lstm model
+    - Epoch 1:
+        - train_loss=3.8534 | val_loss=3.5607
+        - train_metrics: {'top1': 0.1824, 'mrr': 0.3203, 'r@5': 0.4835, 'r@10': 0.6183}
+        - val_metrics:   {'top1': 0.2247, 'mrr': 0.3725, 'r@5': 0.5548, 'r@10': 0.6816}
+
+    - Epoch 2:
+        - train_loss=3.2217 | val_loss=3.2917
+        - train_metrics: {'top1': 0.2453, 'mrr': 0.4036, 'r@5': 0.6054, 'r@10': 0.7410}
+  val_metrics:   {'top1': 0.2526, 'mrr': 0.4078, 'r@5': 0.6045, 'r@10': 0.7293}
+
+    - Epoch 3:
+        - train_loss=2.9815 | val_loss=3.1643
+        - train_metrics: {'top1': 0.2756, 'mrr': 0.4389, 'r@5': 0.6510, 'r@10': 0.7812}
+        - val_metrics:   {'top1': 0.2708, 'mrr': 0.4274, 'r@5': 0.6277, 'r@10': 0.7500}
+    - Epoch 10:
+        - train_loss=2.3052 | val_loss=2.9662
+        - train_metrics: {'top1': 0.3958, 'mrr': 0.5583, 'r@5': 0.7768, 'r@10': 0.8701}
+        - val_metrics:   {'top1': 0.2961, 'mrr': 0.4569, 'r@5': 0.6684, 'r@10': 0.7812}
+
+    - Semantic similarity Example:
+        - Query: declaration of independence
+            - 0.6168 | The unanimous Declaration of the thirteen united States of America
+            - 0.2139 | This recipe uses eggs and flour
+            - 0.0718 | Project Gutenberg released its first ebook in 1971

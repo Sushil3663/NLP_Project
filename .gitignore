@@ -9,3 +9,4 @@ models/*
 !models/mlm_bilstm
 !word2vec_cbow_mlmvocab.model
 !models/mlm_bilstm_embed_100
+!models/ms_marco_emb

@@ -1,10 +1,29 @@
+import re
 import torch
 import torch.nn.functional as F
 from pathlib import Path
 
 from bert_style_LSTM_MLM import FlexibleLSTMBase
 # load checkpoint
-ckpt = torch.load("models/mlm_bilstm/bilstm_mlm_epoch3.pt", map_location="cpu")
+ckpt = torch.load("models/ms_marko_emb/bilstm_best.pt", map_location="cpu")
+
+PAD_TOKEN = "[PAD]"
+MASK_TOKEN = "[MASK]"
+UNK_TOKEN = "[UNK]"
+CLS_TOKEN = "[CLS]"
+SEP_TOKEN = "[SEP]"
+
+PAD_ID = 0
+MASK_ID = 1
+UNK_ID = 2
+CLS_ID = 3
+SEP_ID = 4
+
+TOKEN_RE = re.compile(r"\w+|[^\s\w]", re.UNICODE)
+
+
+def tokenize(text):
+    return TOKEN_RE.findall(text.lower()) if text else []
 
 vocab_itos = ckpt["vocab"]
 stoi = {t: i for i, t in enumerate(vocab_itos)}
@@ -60,5 +79,6 @@ sentences = [
 
 results = similarity_scores(query, sentences)
 
+print(query)
 for sent, score in results:
     print(f"{score:.4f} | {sent}")
