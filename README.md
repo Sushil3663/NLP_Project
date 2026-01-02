@@ -218,3 +218,6 @@ ___
         No-Answer: Acc=55.00% (n=5947)
         Predictions: 5296/11862 no-answer (44.6%)
         ```
+
+QA Architecture:
+![QA Architecture](models/E2E_QA_System_Arch.png)
