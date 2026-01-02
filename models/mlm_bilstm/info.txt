@@ -1,1 +1,0 @@
-mlm_bilstm contains the checkpoints for self-supervised training from scratch
