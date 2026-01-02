@@ -1,5 +1,8 @@
+nltk
 torch
 numpy
 gensim
 datasets
 tqdm
+openpyxl
+faiss-cpu

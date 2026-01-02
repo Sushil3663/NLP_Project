@@ -3,6 +3,8 @@
 data/*
 kaggle/*
 models/*
+results/*
+book_cache/*
 
 !contrastive_anchors_positives.json
 !BPEtokenizer_books_an_pos_25000/
