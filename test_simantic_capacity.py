@@ -5,7 +5,7 @@ from pathlib import Path
 
 from bert_style_LSTM_MLM import FlexibleLSTMBase
 # load checkpoint
-ckpt = torch.load("models/ms_marko_emb/bilstm_best.pt", map_location="cpu")
+ckpt = torch.load("models/ms_marco_emb/bilstm_best.pt", map_location="cpu")
 
 PAD_TOKEN = "[PAD]"
 MASK_TOKEN = "[MASK]"
