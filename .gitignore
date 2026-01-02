@@ -16,6 +16,7 @@ book_cache/*
 !MLM_BiLSTM.png
 !QA.png
 !Bert_QA.png
+!ContrastiveEmbedTraining.png
 !E2E_QA_System_Arch.png
 !Training Architecture.png
 !data/book_clean/
