@@ -21,3 +21,4 @@ book_cache/*
 !Training Architecture.png
 !data/book_clean/
 !data/book_clean/*.txt
+!ContrastiveLoss.png
