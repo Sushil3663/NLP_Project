@@ -172,3 +172,49 @@ Conclusion: Training on hard-negative mined dataset is essential rather then jus
 
 ___
 
+4. SQuAD v2 QA Training using Bi-LSTM:
+    - using pre-trained Bi-LSTM embedding model (from Exp. 3)
+    - Data conversion from chat based indexing to word based (our vocab)
+         ```
+            Curation summary (train):
+            {
+            "kept_answerable_ok": 86544, 
+                "kept_with_unk": 31706, Answerable with unknown
+                "filtered_answerable": 277, span alignment issues
+            "kept_unanswerable": 43498, No answer
+            "total_examples": 130319, 86k + 43k = ~130k
+            "kept_examples": 130042,
+            "filtered_examples": 277
+            }
+            Curation summary (validation):
+            {
+            "kept_answerable_ok": 5917,
+                "kept_with_unk": 2257,
+                "kept_unanswerable": 5945,
+            "filtered_answerable": 11,
+            "total_examples": 11873,
+            "kept_examples": 11862,
+            "filtered_examples": 11
+            }
+        ```
+    - Epoch 1 | Avg Loss=6.7316 | LR=2e-05
+        ```
+        Overall: EM=48.39, F1=48.83
+        Has-Answer: EM=1.08, F1=1.97 (n=5915)
+        No-Answer: Acc=95.44% (n=5947)
+        Predictions: 11204/11862 no-answer (94.5%)
+        ```
+    - Epoch 2 | Avg Loss=5.6426 | LR=2e-05
+        ```
+        Overall: EM=45.10, F1=46.65
+        Has-Answer: EM=5.22, F1=8.34 (n=5915)
+        No-Answer: Acc=84.77% (n=5947)
+        Predictions: 9491/11862 no-answer (80.0%)
+        ```
+    - Epoch 20 | Avg Loss=2.0097 | LR=2e-05
+        ```
+        Overall: EM=38.49, F1=43.70
+        Has-Answer: EM=21.89, F1=32.34 (n=5915)
+        No-Answer: Acc=55.00% (n=5947)
+        Predictions: 5296/11862 no-answer (44.6%)
+        ```

@@ -1,0 +1,146 @@
+Loading checkpoint vocab...
+Loading SQuAD v2 dataset from HuggingFace...
+                                                                                                                    
+Curation summary (train):
+{
+  "kept_answerable_ok": 86544,
+  "kept_with_unk": 31706,
+  "filtered_answerable": 277,
+  "kept_unanswerable": 43498,
+  "total_examples": 130319,
+  "kept_examples": 130042,
+  "filtered_examples": 277
+}
+Curation summary (validation):
+{
+  "kept_answerable_ok": 5917,
+  "kept_with_unk": 2257,
+  "kept_unanswerable": 5945,
+  "filtered_answerable": 11,
+  "total_examples": 11873,
+  "kept_examples": 11862,
+  "filtered_examples": 11
+}
+Loaded encoder weights from ckpt['model_state'] (non-strict).
+                                                                                                                    
+Epoch 1 | Avg Loss=6.7316 | LR=2e-05
+  Overall: EM=48.39, F1=48.83
+  Has-Answer: EM=1.08, F1=1.97 (n=5915)
+  No-Answer: Acc=95.44% (n=5947)
+  Predictions: 11204/11862 no-answer (94.5%)
+  ✓ Best model saved (F1=48.83)
+                                                                                                                    
+Epoch 2 | Avg Loss=5.6426 | LR=2e-05
+  Overall: EM=45.10, F1=46.65
+  Has-Answer: EM=5.22, F1=8.34 (n=5915)
+  No-Answer: Acc=84.77% (n=5947)
+  Predictions: 9491/11862 no-answer (80.0%)
+                                                                                                                    
+Epoch 3 | Avg Loss=5.1893 | LR=2e-05
+  Overall: EM=45.30, F1=47.32
+  Has-Answer: EM=7.17, F1=11.23 (n=5915)
+  No-Answer: Acc=83.22% (n=5947)
+  Predictions: 9200/11862 no-answer (77.6%)
+Epoch 4:  59%|█████████████████████████Epoch 4:  59%|█████████████████████████Epoch 4:  59%|█████████████████████████Epoch 4:  59%|█████████████████████████Epoch 4:  59%|███████████████████████████████████████                         Epoch 4:  59%|███████████████████████████████████████                         Epoch 4:  59%|███████████████████████████████████████▏                        Epoch 4:  59%|███████████████████████████████████████▏                        Epoch 4:  59%|███████████████████████████████████████▏                        Epoch 4:  59%|███████████████████████████████████████▏                        Epoch 4:  59%|███████████████████████████████████████▎                        Epoch 4:  60%|███████████████████████████████████████▎                        Epoch 4:  60%|███████████████████████████████████████▎                        Epoch 4:  60%|███████████████████████████████████████▎                        Epoch 4:  60%|███████████████████████████████████████▍                        Epoch 4:  60%|███████████████████████████████████████▍                        Epoch 4:  60%|███████████████████████████████████████▍                        Epoch 4:  60%|███████████████████████████████████████▍                        Epoch 4:  60%|███████████████████████████████████████▌                        Epoch 4:  60%|███████████████████████████████████████▌                                                                                                                                            
+Epoch 4 | Avg Loss=4.8282 | LR=2e-05
+  Overall: EM=44.90, F1=47.35
+  Has-Answer: EM=9.99, F1=14.92 (n=5915)
+  No-Answer: Acc=79.62% (n=5947)
+  Predictions: 8736/11862 no-answer (73.6%)
+                                                                                                                    
+Epoch 5 | Avg Loss=4.5171 | LR=2e-05
+  Overall: EM=41.42, F1=45.28
+  Has-Answer: EM=15.49, F1=23.23 (n=5915)
+  No-Answer: Acc=67.21% (n=5947)
+  Predictions: 6947/11862 no-answer (58.6%)
+                                                                                                                    
+Epoch 6 | Avg Loss=4.2484 | LR=2e-05
+  Overall: EM=44.31, F1=47.93
+  Has-Answer: EM=15.69, F1=22.95 (n=5915)
+  No-Answer: Acc=72.78% (n=5947)
+  Predictions: 7630/11862 no-answer (64.3%)
+                                                                                                                    
+Epoch 7 | Avg Loss=4.0176 | LR=2e-05
+  Overall: EM=45.21, F1=48.77
+  Has-Answer: EM=16.08, F1=23.22 (n=5915)
+  No-Answer: Acc=74.19% (n=5947)
+  Predictions: 7784/11862 no-answer (65.6%)
+                                                                                                                    
+Epoch 8 | Avg Loss=3.8091 | LR=2e-05
+  Overall: EM=45.40, F1=49.07
+  Has-Answer: EM=16.53, F1=23.90 (n=5915)
+  No-Answer: Acc=74.10% (n=5947)
+  Predictions: 7720/11862 no-answer (65.1%)
+  ✓ Best model saved (F1=49.07)
+                                                                                                                    
+Epoch 9 | Avg Loss=3.6246 | LR=2e-05
+  Overall: EM=43.22, F1=47.66
+  Has-Answer: EM=18.88, F1=27.79 (n=5915)
+  No-Answer: Acc=67.43% (n=5947)
+  Predictions: 6838/11862 no-answer (57.6%)
+                                                                                                                    
+Epoch 10 | Avg Loss=3.4509 | LR=2e-05
+  Overall: EM=41.88, F1=46.67
+  Has-Answer: EM=20.66, F1=30.26 (n=5915)
+  No-Answer: Acc=62.99% (n=5947)
+  Predictions: 6273/11862 no-answer (52.9%)
+                                                                                                                    
+Epoch 11 | Avg Loss=3.2844 | LR=2e-05
+  Overall: EM=43.21, F1=47.88
+  Has-Answer: EM=19.32, F1=28.67 (n=5915)
+  No-Answer: Acc=66.97% (n=5947)
+  Predictions: 6726/11862 no-answer (56.7%)
+                                                                                                                    
+Epoch 12 | Avg Loss=3.1230 | LR=2e-05
+  Overall: EM=39.30, F1=44.71
+  Has-Answer: EM=22.10, F1=32.94 (n=5915)
+  No-Answer: Acc=56.41% (n=5947)
+  Predictions: 5431/11862 no-answer (45.8%)
+                                                                                                                    
+Epoch 13 | Avg Loss=2.9726 | LR=2e-05
+  Overall: EM=43.19, F1=47.54
+  Has-Answer: EM=18.44, F1=27.16 (n=5915)
+  No-Answer: Acc=67.80% (n=5947)
+  Predictions: 6956/11862 no-answer (58.6%)
+                                                                                                                    
+Epoch 14 | Avg Loss=2.8218 | LR=2e-05
+  Overall: EM=42.50, F1=47.12
+  Has-Answer: EM=20.07, F1=29.34 (n=5915)
+  No-Answer: Acc=64.81% (n=5947)
+  Predictions: 6477/11862 no-answer (54.6%)
+                                                                                                                    
+Epoch 15 | Avg Loss=2.6758 | LR=2e-05
+  Overall: EM=39.23, F1=44.75
+  Has-Answer: EM=22.99, F1=34.05 (n=5915)
+  No-Answer: Acc=55.39% (n=5947)
+  Predictions: 5233/11862 no-answer (44.1%)
+                                                                                                                    
+Epoch 16 | Avg Loss=2.5311 | LR=2e-05
+  Overall: EM=40.05, F1=45.24
+  Has-Answer: EM=21.88, F1=32.28 (n=5915)
+  No-Answer: Acc=58.13% (n=5947)
+  Predictions: 5620/11862 no-answer (47.4%)
+                                                                                                                    
+Epoch 17 | Avg Loss=2.3958 | LR=2e-05
+  Overall: EM=42.24, F1=46.87
+  Has-Answer: EM=20.22, F1=29.51 (n=5915)
+  No-Answer: Acc=64.13% (n=5947)
+  Predictions: 6320/11862 no-answer (53.3%)
+                                                                                                                    
+Epoch 18 | Avg Loss=2.2612 | LR=2e-05
+  Overall: EM=38.23, F1=43.67
+  Has-Answer: EM=22.20, F1=33.11 (n=5915)
+  No-Answer: Acc=54.18% (n=5947)
+  Predictions: 5151/11862 no-answer (43.4%)
+                                                                                                                    
+Epoch 19 | Avg Loss=2.1308 | LR=2e-05
+  Overall: EM=39.12, F1=44.42
+  Has-Answer: EM=21.96, F1=32.59 (n=5915)
+  No-Answer: Acc=56.18% (n=5947)
+  Predictions: 5391/11862 no-answer (45.4%)
+                                                                                                                    
+Epoch 20 | Avg Loss=2.0097 | LR=2e-05
+  Overall: EM=38.49, F1=43.70
+  Has-Answer: EM=21.89, F1=32.34 (n=5915)
+  No-Answer: Acc=55.00% (n=5947)
+  Predictions: 5296/11862 no-answer (44.6%)

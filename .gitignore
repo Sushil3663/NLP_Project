@@ -12,3 +12,4 @@ book_cache/*
 !word2vec_cbow_mlmvocab.model
 !models/mlm_bilstm_embed_100
 !models/ms_marco_emb
+!models/QA_squad
