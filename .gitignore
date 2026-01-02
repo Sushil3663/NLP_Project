@@ -18,3 +18,5 @@ book_cache/*
 !Bert_QA.png
 !E2E_QA_System_Arch.png
 !Training Architecture.png
+!data/book_clean/
+!data/book_clean/*.txt
