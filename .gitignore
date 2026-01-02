@@ -13,3 +13,8 @@ book_cache/*
 !models/mlm_bilstm_embed_100
 !models/ms_marco_emb
 !models/QA_squad
+!MLM_BiLSTM.png
+!QA.png
+!Bert_QA.png
+!E2E_QA_System_Arch.png
+!Training Architecture.png
